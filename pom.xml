@@ -8,11 +8,11 @@
 		<version>2.1.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.programming.techie</groupId>
-	<artifactId>spring-ng-blog</artifactId>
+	<groupId>com.startup.joinsmart</groupId>
+	<artifactId>JoinSmart</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-ng-blog</name>
-	<description>Demo project for Spring Boot</description>
+	<name>JoinSmart</name>
+	<description>Choose better for your career</description>
 
 	<properties>
 		<java.version>1.8</java.version>
