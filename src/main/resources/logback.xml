@@ -39,6 +39,15 @@
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
 
+        <RollingFile name="apperror" fileName="${sys:APP_LOG_ROOT}/application-error.log"
+                     filePattern="${sys:APP_LOG_ROOT}/application-auditing-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="19500KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+
         <RollingFile name="hibernateLog" fileName="${sys:APP_LOG_ROOT}/database.log"
                      filePattern="${sys:APP_LOG_ROOT}/spring-hibernate-error-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout pattern="${LOG_PATTERN}"/>
@@ -52,13 +61,18 @@
 
     <Loggers>
 
-        <Logger name="com.howtodoinjava.demo" additivity="false" level="debug">
+        <Logger name="com.startup.joinsmart" additivity="false" level="debug">
             <AppenderRef ref="applicationLog" />
             <AppenderRef ref="console"  />
         </Logger>
 
-        <Logger name="com.howtodoinjava.demo.aop" additivity="false" level="info">
+        <Logger name="com.startup.joinsmart.aop" additivity="false" level="info">
             <AppenderRef ref="aopLog" />
+            <AppenderRef ref="console" />
+        </Logger>
+
+        <Logger name="com.startup.joinsmart" additivity="false" level="error">
+            <AppenderRef ref="apperror" />
             <AppenderRef ref="console" />
         </Logger>
 
