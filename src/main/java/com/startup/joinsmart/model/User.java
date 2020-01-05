@@ -2,13 +2,14 @@ package com.startup.joinsmart.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "UserRegistration")
 public class User {
     @Id
     @Column(name = "UserRegistrationId")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userRegistrationId;
     @Column(name = "RoleId")
     private Long roleId;
